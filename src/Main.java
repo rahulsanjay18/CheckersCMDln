@@ -15,8 +15,7 @@ public class Main {
 		boolean isTheGameStarted = false;
 		boolean isItPlayerZeroTurn = true;
 		Scanner s = new Scanner(System.in);
-		while(isItGoing)
-		{
+		while(isItGoing){
 			String commandLine = s.nextLine();
 
 			String command[] = commandLine.split(" ");
@@ -24,8 +23,7 @@ public class Main {
 			switch(commandLine.split(" ")[0]){
 
 			case "start":
-				if(2 == command.length)
-				{
+				if(2 == command.length){
 
 					CheckerCommander.start(command[1]);
 					isTheGameStarted = true;
@@ -42,11 +40,8 @@ public class Main {
 				break;
 
 			case "move":
-				if(isTheGameStarted)
-				{
-					if(command.length == 5)	
-					{
-
+				if(isTheGameStarted){
+					if(command.length == 5)	{
 						Coordinates initialLocation = new Coordinates(Integer.parseInt(command[1]), Integer.parseInt(command[2]));
 						Coordinates finalLocation = new Coordinates(Integer.parseInt(command[3]), Integer.parseInt(command[4]));
 
@@ -61,14 +56,12 @@ public class Main {
 
 					}
 
-					else
-					{
+					else{
 						System.out.println("To begin a game, enter the command in this format: move x y x' y'");
 					}
 				}
 
-				else
-				{
+				else{
 					System.out.println("No game file has been started. Please use the start command.");
 				}
 
@@ -81,13 +74,11 @@ public class Main {
 				}
 				break;
 			case "board":
-				if(isTheGameStarted)
-				{
+				if(isTheGameStarted){
 					CheckerCommander.showBoard();
 				}
 
-				else
-				{
+				else{
 					System.out.println("No game file has been started. Please use the start command.");
 				}
 			}
